@@ -6,7 +6,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="#a8a8a8" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="Small" />
             </Style>
             <Style x:Key="fieldStyle" TargetType="Label">
@@ -25,23 +25,20 @@
             <StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <StackLayout Padding="10,10,10,10" HorizontalOptions="FillAndExpand">
-                        <!-- Place new controls here -->
-                        <Label Text="Please enter data here" TextColor="White" FontAttributes="Bold" FontSize="Medium" />
-
                         <Label x:Name="srtTimeLbl" Text="Start Time" Style="{StaticResource labelStyle}" />
-                        <Entry x:Name="srtTime" />
+                        <TimePicker x:Name="srtTime" />
 
                         <Label x:Name="srtTempLbl" Text="Start Temperature" Style="{StaticResource labelStyle}" />
-                        <Entry x:Name="srtTemp" />
+                        <Entry x:Name="srtTemp" Keyboard="Numeric" />
 
                         <Label x:Name="endTimeLbl" Text="End Time" Style="{StaticResource labelStyle}" />
-                        <Entry x:Name="endTime" />
+                        <TimePicker x:Name="endTime" />
 
                         <Label x:Name="endTempLbl" Text="End Temperature" Style="{StaticResource labelStyle}" />
-                        <Entry x:Name="endTemp" />
+                        <Entry x:Name="endTemp" Keyboard="Numeric" />
 
                         <StackLayout Padding="10,10,10,10" VerticalOptions="End">
-                            <Button x:Name="findTempRate" Text="Calculate" WidthRequest="185" BorderWidth="1" >
+                            <Button x:Name="FindTempRatebtn" Text="Calculate" WidthRequest="185" BorderWidth="1" >
                                 <!-- Set iOS colors; use defaults on other platforms -->
                                 <Button.TextColor>
                                     <OnPlatform x:TypeArguments="Color" iOS="White"/>
